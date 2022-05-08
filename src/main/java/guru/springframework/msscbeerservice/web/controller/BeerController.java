@@ -19,10 +19,10 @@ public class BeerController {
         return new ResponseEntity<>(BeerDto.builder().build(), HttpStatus.OK);
     }
 
-    @PutMapping
+    @PostMapping
     public ResponseEntity<HttpStatus> saveNewBeer(@RequestBody BeerDto beerDto) {
         //Todo: Impl - For saveNewBeer
-        return new ResponseEntity<>(HttpStatus.OK);
+        return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
     @PutMapping("/{beerId}")
