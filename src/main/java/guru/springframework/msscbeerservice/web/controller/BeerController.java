@@ -8,12 +8,12 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.UUID;
 
-@RequestMapping("api/v1/beer")
+@RequestMapping("api/v1/beer/")
 @RestController
 @Slf4j
 public class BeerController {
 
-    @GetMapping("/{beerId}")
+    @GetMapping("{beerId}")
     public ResponseEntity<BeerDto> getBeerById(@PathVariable("beerId") UUID beerId) {
         //Todo: Impl - For getBeerById
         return new ResponseEntity<>(BeerDto.builder().build(), HttpStatus.OK);
@@ -25,7 +25,7 @@ public class BeerController {
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
-    @PutMapping("/{beerId}")
+    @PutMapping("{beerId}")
     public ResponseEntity<BeerDto> updateBeerById(@PathVariable("beerId") UUID beerId, @RequestBody BeerDto beerDto) {
         //Todo: Impl - For updateBeerById
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
